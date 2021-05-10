@@ -151,7 +151,7 @@ sumTable %>%
 
 ```
 
-*First, each of the scoring variables were averaged. The mean number of attacks was 49.91	attacks. The mean number of blocks was 8.826 blocks. The mean number of serves was 5.296 serves. The mean total score was 64.032 points. The USA has 40 players in this dataset. The DOM team had the least number of players with 11 players. The highest score is 421 total points. The lowest rank possible is number 255. The standard deviation of total scores is 59.7952. No player has exactly the mean total points foudn from the last table.*
+*First, each of the scoring variables were averaged. The mean number of attacks was 49.91	attacks. The mean number of blocks was 8.826 blocks. The mean number of serves was 5.296 serves. The mean total score was 64.032 points. The USA has 40 players in this dataset. The DOM team had the least number of players with 11 players. The highest score is 421 total points. The lowest rank possible is number 255. The standard deviation of total scores is 59.7952 which is very high consdiering players of this level often score highly no matter the position. No player has exactly the mean total points found from the last table. My hypothesis do seem to be headed in the rght direction because there are some surprising statistics so far so I expect some discrepancy between male and female athletes.*
 
 ## Visualizations
 
@@ -220,7 +220,7 @@ ggplot(scoreNum,  aes(x =  Attacks,  y =  Total)) +
 ### Dimensionality Reduction
 
 ##### PCA
-```{r pressureFour, echo=FALSE}
+```{r pressureFour, echo=TRUE}
 
 # PCA
 # Prepare data for PCA and run PCA
