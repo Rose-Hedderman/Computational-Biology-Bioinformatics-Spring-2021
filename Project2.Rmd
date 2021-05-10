@@ -1,0 +1,463 @@
+---
+title: "Biophysical Models and Neural Network Architectures for Neural test data"
+author: 'Rose Hedderman EID: rrh2298'
+date: "4/17/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE)
+options(warn=-1)
+```
+
+## Project 2
+
+### Introduction. 
+This report goes over the relationships between spiking data taken from single cortical laayer 5 pyramidal cells after simulation. The dataset contains attributes that contribute to the study of single cortical neurons as deep artificial neural networks. I chose this dataset because I am equally interested in neuroscience and artificial intelligence and this study embodied where they meet. Working with a new dataset also gave me practice looking for and cleaning data that is appropriate for my desired analysis. 
+The dataset hold variables for the evaluation of fitting performance on test data for different neural network structures and three different biophysical models used. These three models are NMDA synpases, AMPA synapses, and AMPA synapses without the SK channel. There were two available tidy datasets and the larger one was used for an increased sample size of 105 rows and 18 columns of data. This was cut down for different analyses below, but the large dataset was a great place to start. 
+
+```{r load dataset}
+# import needed libraries
+library(dplyr)
+library(tidyverse)
+library(cluster)
+
+# hide warnings due to older version of R
+options(warn=-1)
+
+# import dataset
+models <- read.csv("C:/Users/roseh/OneDrive/Desktop/Spring 2021/SDS 348/best_results_test_105_models (1).csv", stringsAsFactors=FALSE)
+
+# view the first 6 rows of the dataset 'models'
+head(`models`)
+```
+
+### EDA
+A correlation matrix was displayed to show the relationships between 14 different numerical variables. The columns were renamed so that the correlation matrix formatting would be legible. 
+
+```{r EDA statistics}
+# graphs - correlation matrix
+# view column names to rename columns so correlation matrix dimensions fit
+#colnames(models)
+
+models <- models %>%
+    # rename variables to fix dimensions of correlation matrix
+  rename("depth" = NN_depth, "width" = NN_width, "input_t" = NN_input_time_window,
+         "D.prime" = spikes.D.prime, "AUC" = spikes.AUC, "AUC.1" = spikes.AUC...1..FP,
+         "sev" = soma.explained.variance.., "s_RMSE" = soma.RMSE, "s_MAE" = soma.MAE,
+         "TP.1" = spikes.TP...0.1..FP, "TP.25" = spikes.TP...0.25..FP,
+         "AUCstd" = spikes.AUC.std.of.subsets, "sev.stdsub" = soma.explained.variance...std.of.subsets,
+         "numTrn" = NN_num_train_samples, "uniTrn" = NN_unique_train_files)
+
+
+# nummodels if a df of the numeric variables in models
+nummodels <- models %>%
+  select(-biophysical_model_type, -full.model.filename, -NN_model_type)
+
+nummodels <- nummodels %>% 
+  scale %>%
+  as.data.frame
+head(nummodels)
+
+# create a correlation matrix with univariate/bivariate graphs and correlation coefficients
+# Find the correlations among the disciplines
+cor(nummodels, use = "pairwise.complete.obs") %>%
+  # Save as a data frame
+  as.data.frame %>%
+  # Convert row names to an explicit variable
+  rownames_to_column %>%
+  # Pivot so that all correlations appear in the same column
+  pivot_longer(-1, names_to = "other_var", values_to = "correlation") %>%
+  ggplot(aes(rowname, ordered(other_var, levels = rev(sort(unique(other_var)))), fill=correlation)) +
+  # Heatmap with geom_tile
+  geom_tile() +
+  # Change the scale to make the middle appear neutral
+  scale_fill_gradient2(low="red",mid="white",high="blue") +
+  # Overlay values
+  geom_text(aes(label = round(correlation,2)), color = "black", size = 4) +
+  # Give title and labels
+  labs(title = "Correlation matrix for the dataset models", x = "variable 1", y = "variable 2") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+```
+Notable relationships seen in the correlation matrix that will be tested later on include: AUC.1 ~ D.prime and TP.25 ~ s_RMSE. Some numerical variables showed to have very little correlation so they were not included in the MANOVA analysis in an effort to cut down unnecessary number crunching. These variables include depth, input_t, numTrn, uniTrn, and width.
+
+### MANOVA
+Performed a MANOVA test between 10 numerical variables with the most correlation according to the correlation matrix. 
+
+```{r MANOVA, echo=FALSE}
+# do a manova analysis between the semi correlated variables
+
+# Perform MANOVA with 2 response variables listed in cbind()
+manova_models <- manova(cbind(AUC, AUC.1, AUCstd, D.prime, s_MAE, s_RMSE, sev, sev.stdsub, TP.1, TP.25) ~ NN_model_type, data = models)
+
+# OUtput of MANOVA
+summary(manova_models)
+
+  # If MANOVA is significant then we can perform one-way ANOVA for each variable
+  summary.aov(manova_models)
+
+    # If ANOVA is significant then we can perform post-hoc analysis
+    # For AUC
+    pairwise.t.test(models$AUC,models$NN_model_type, p.adj="none")
+    # For AUC.1
+    pairwise.t.test(models$AUC.1,models$NN_model_type, p.adj="none")
+    # For AUCstd
+    pairwise.t.test(models$AUCstd,models$NN_model_type, p.adj="none")
+    # For D.prime
+    pairwise.t.test(models$D.prime,models$NN_model_type, p.adj="none")
+    # For s_MAE
+    pairwise.t.test(models$s_MAE,models$NN_model_type, p.adj="none")
+    # For s_RMSE
+    pairwise.t.test(models$s_RMSE,models$NN_model_type, p.adj="none")
+    # For sev
+    pairwise.t.test(models$sev,models$NN_model_type, p.adj="none")
+    # For sev.stdsub
+    pairwise.t.test(models$sev.stdsub,models$NN_model_type, p.adj="none")
+    # For TP.1
+    pairwise.t.test(models$TP.1,models$NN_model_type, p.adj="none")
+    # For TP.25
+    pairwise.t.test(models$TP.25,models$NN_model_type, p.adj="none")
+```
+After the MANOVA analysis was performed, the variables that showed to be significant were TP.1, TP.25, and AUC.1. Therefore, a univariate ANOVA test was performed on each of them. 
+
+#### ANOVA
+
+```{r univariate anova, echo=FALSE}
+# Which groups were significant?
+## TP.1 TP.25 and AUC.1
+
+# Run ANOVA to compare the TP.1 by model type
+summary(aov(TP.1 ~ NN_model_type, data = models))
+
+
+# Which means differ? Conduct post-hoc analysis
+pairwise.t.test(models$TP.1, models$NN_model_type, p.adj = "none")
+
+
+# Run ANOVA to compare the TP.1 by model type
+summary(aov(TP.25 ~ NN_model_type, data = models))
+
+
+# Which means differ? Conduct post-hoc analysis
+pairwise.t.test(models$TP.25, models$NN_model_type, p.adj = "none")
+
+# Run ANOVA to compare the TP.1 by model type
+summary(aov(AUC.1 ~ NN_model_type, data = models))
+
+
+# Which means differ? Conduct post-hoc analysis
+pairwise.t.test(models$AUC.1, models$NN_model_type, p.adj = "none")
+```
+ The mean difference across groups remains significant after ANOVA tests. All three p-values remain very small, much smaller than 0.05. 
+ 
+#### Type I Error
+
+```{r}
+# probability that you have made at least one type I error
+prob <- 1 - (0.95^10)
+prob
+
+# Bonferonni adjusted = 0.05/ number of tests
+bon = 0.05/10
+bon
+```
+The probability of at least one type I error is 40.12% and the adjusted Bonferroni significance level is 0.005 for 10 variables. The three significant values remain significant after the Bonferroni adjusted comparison value. 
+
+#### Assumptions
+Assumptions were evaluated visually for the three significant variables.
+
+```{r assumptions}
+# Check assumptions visually
+ggplot(models, aes(y = TP.1)) +
+  geom_boxplot(aes(fill = as.factor(NN_model_type))) +
+  labs(title = "Box Plot of TP.1")
+
+# Check assumptions visually
+ggplot(models, aes(y = TP.25)) +
+  geom_boxplot(aes(fill = as.factor(NN_model_type)))+
+  labs(title = "Box Plot of TP.25")
+
+# Check assumptions visually
+ggplot(models, aes(y = AUC.1)) +
+  geom_boxplot(aes(fill = as.factor(NN_model_type)))+
+  labs(title = "Box Plot of AUC.1")
+
+```
+All three box plots show a normal distribution for a box plot. There are no outliers for any other the distributions with the center relatively balanced and the NN model type definitely different.
+
+#### Randomization Test 
+
+**The null hypothesis is that the observed patten is no different than what we would expect by random chance.**
+
+**The alternative hypothesis is that the observed patten is different than what we would expect by random chance.**
+
+```{r randomization test}
+# do randomization test on TP.25
+# Observed F-statistic, running anova
+obs_F <- 16.85
+
+# find dimensions of dataset to determine MSB and MSW later on
+dim(models)
+
+# Randomization test (using replicate)
+Fs <- replicate(5000,{
+  # Randomly permute the response variable across doses
+  new <- models %>%
+    mutate(TP.25= sample(TP.25))
+  # Compute variation within groups
+  SSW <- new %>%
+    group_by(NN_model_type) %>%
+    summarize(SSW = sum((TP.25 - mean(TP.25))^2)) %>%
+    summarize(sum(SSW)) %>% 
+    pull
+  # Compute variation between groups
+  SSB <- new %>% 
+    mutate(mean = mean(TP.25)) %>%
+    group_by(NN_model_type) %>% 
+    mutate(groupmean = mean(TP.25)) %>%
+    summarize(SSB = sum((mean - groupmean)^2)) %>%
+    summarize(sum(SSB)) %>%
+    pull
+  # Compute the F-statistic (ratio of MSB and MSW)
+  # df for SSB is 3 groups - 1 = 2
+  # df for SSW is 105 observations - 2 groups = 103
+  (SSB/1)/(SSW/103)
+})
+
+# Calculate the proportion of F statistic that are greater than the observed F-statistic
+mean(Fs > obs_F)
+
+# Represent the distribution of the F-statistics for each randomized sample
+hist(Fs, prob=T); abline(v = obs_F, col="red",add=T)
+```
+The purpose of a randomization is to scramble the data to break any associations present within or between the data. On average, the means will be the same across groups when doing this. The ata was scrambled 5000 times and the F statistic was recorded each time. The histogram of F statistics shows that the randomized F statisitcs are close to zero while the observed F statistic remains much higher around 16.85 as found from the respective anova analysis.
+
+### Linear Regression model 
+
+Performed a linear regression between the interaction between the biophysical model type and the centered D.prime value on the AUC.1 value.
+
+```{r linear regression}
+# Linear regression 
+# Center the data around the means (the intercept becomes more informative)
+models$D_c <- models$D.prime - mean(models$D.prime)
+
+# Include an interaction term in the regression model with centered predictors
+fit_c <- lm(AUC.1 ~ biophysical_model_type * D_c, data = models)
+summary(fit_c)
+```
+#### Interpretations
+
+The biophysical model type AMPA_SK is NOT significantly associated with AUC.1 for the biophysical model type, AMPA: for every one unit increase in AMPA_SK, the AUC.1 value goes down by 0.008 (t = -0.575, df = 99, p  = 0.567).
+
+The biophysical model type NMDA is NOT significantly associated with AUC.1 for the biophysical model type, AMPA: for every one unit increase in NMDA, the AUC.1 value goes down by 0.011 (t = -1.235, df = 99, p  = 0.220).
+
+**D.prime is significantly associated with AUC.1 for the biophysical model type, AMPA: for every one unit increase in D.prime, the AUC.1 value goes up by 0.4921 (t = 18.129, df = 99, p < 0.001).**
+
+There is NOT a significant interaction between the the AMPA_SK biophysical model type and D.prime. The slope for D.prime on AUC.1 is 0.01611 higher for the AMPA_SK biophysical model type compared to the AMPA biophysical model type (t = 0.362, df= 99, p = 0.718).
+
+**There is a significant interaction between the the NMDA biophysical model type and D.prime. The slope for D.prime on AUC.1 is 0.2768 lower for the NMDA biophysical model type compared to the AMPA biophysical model type (t = -8.798, df= 99, p < 0.001).**
+
+#### Graph to visualize the interaction
+
+```{r linear regression vis}
+# Create a graph to visualize the interaction between D.prime and AUC.1 on the biophysical model type
+ggplot(models, aes(x = D_c, y = AUC.1, color = biophysical_model_type)) +
+  geom_point() +
+  geom_smooth(method=lm, se=FALSE, fullrange=TRUE) + 
+  labs(title = "Interaction Visualization", x = "Mean Centered D.prime")
+```
+
+#### Variation
+
+```{r prop var}
+# calculate r-squared value using built-in function
+summary(fit_c)$r.sq
+```
+According to the mean-centered distribution, 95.23% of the variation is explained by the model.
+
+#### Check assumptions
+
+```{r check assump}
+# check assumptions visually
+plot(models$AUC.1, models$D_c)
+fit <- lm(AUC.1 ~ D_c, data = models)
+summary(fit)
+
+# Residuals vs Fitted values plot
+plot(fit, which = 1)
+
+# Histogram of residuals
+hist(fit$residuals)
+
+# Q-Q plot for the residuals
+plot(fit, which = 2)
+
+
+# check assumptions numerically: normality
+# Shapiro-Wilk test
+# H0: normality
+shapiro.test(fit$residuals)
+
+# Kolmogorov-Smirnov test
+# H0: normality
+ks.test(fit$residuals, "pnorm", mean=0, sd(fit$residuals))
+  # note: the error indicates that there are repeated values for the residuals
+
+# Check assumptions numverically: homoscedasticity
+library(sandwich);
+# install.packages("lmtest")
+library(lmtest)
+
+# Breusch-Pagan test
+# H0: homoscedasticity
+bptest(fit) 
+```
+The regression passes all assumptions. While visualizations look like the data might not pass tests, the numerical assumption tests produced very low p values on the one sample tests suggesting a normal distribution.
+
+#### Robust Standard Errors
+
+```{r rob se}
+# Robust Standard Errors
+# install.packages("sandwich")
+library(sandwich)
+coeftest(fit, vcov = vcovHC(fit))
+
+# original values
+# 0.492123   0.027146  18.129  < 2e-16 ***
+```
+There was no significant diffference before and after calculating robust SEs. The results are still statisitcally siginifcant this time with: D.prime is significantly associated with AUC.1 for the biophysical model type, AMPA: for every one unit increase in D.prime, the AUC.1 value goes up by 0.338 (t = 18.587, df = 99, p < 0.001).
+
+#### Bootstrapped Standard Errors
+
+```{r boot se}
+# When assumptions are violated (homoscedasticity, normality, small sample size)
+# use bootstrap samples to estimate coefficients, SEs, fitted values, ...
+
+# Example of estimating coefficients SEs
+# Use the function replicate to repeat the process
+samp_SEs <- replicate(5000, {
+  # Bootstrap your data (resample observations)
+  boot_data <- sample_frac(models, replace = TRUE)
+  # Fit regression model
+  fitboot <- lm(AUC.1 ~ D_c, data = boot_data)
+  # Save the coefficients
+  coef(fitboot)
+})
+
+# Estimated SEs
+samp_SEs %>%
+  # Transpose the obtained matrices
+  t %>%
+  # Consider the matrix as a data frame
+  as.data.frame %>%
+  # Compute the standard error (standard deviation of the sampling distribution)
+  summarize_all(sd)
+
+# We can also consider a confidence interval for the estimates
+samp_SEs %>%
+  # Transpose the obtained matrices
+  t %>%
+  # Consider the matrix as a data frame
+  as.data.frame %>%
+  # Pivot longer to group by and summarize each coefficient
+  pivot_longer(everything(), names_to = "estimates", values_to = "value") %>%
+  group_by(estimates) %>%
+  summarize(lower = quantile(value,.025), upper = quantile(value,.975))
+
+# Compare to original fit
+confint(fit, level = 0.95)
+```
+There were no changes to the p-values using bootstrapped standard errors compared to the original stanard errors and robust standard errors.
+
+### Logistic Regression 
+Performed a logistic regression after making NN model type a binary variable and analyzing it against TP.25 and s_RMSE.
+
+```{r logistic regression}
+# binary categorical variable is NN_model_type
+# Create a binary variable coded as 0 and 1
+models <- models %>%
+  mutate(y = ifelse(NN_model_type == "FCN", 1, 0)) 
+
+# Consider a logistic model with the two numeric variables, TP.25  and s_RMSE
+log_model <- glm(y ~ TP.25 + s_RMSE, data = models, family = "binomial")
+summary(log_model)
+```
+#### Interpretations of coeffecient estimates in context
+Interpretations for coefficient of TP.25 holding s_RMSE constant: a one unit increase in TP.25 decreases the log-odds of the NN model type being FCN by 59.115.
+
+Interpretations for coefficient of s_RMSE holding TP.25 constant: a one unit increase in s_RMSE decreases the log-odds of the NN model type being FCN by 25.371.
+
+
+#### Confusion Matrix
+
+```{r confusion matrix}
+# Add predicted probabilities to the dataset
+models$prob <- predict(log_model, type = "response")
+
+# Predicted outcome is based on the probability of malignant
+# if the probability is greater than 0.5, the NN model type is FCN
+models$predicted <- ifelse(models$prob > .5, "FCN", "TCN") 
+# Confusion matrix
+table(truth = models$NN_model_type, prediction = models$predicted)
+
+# Accuracy (correctly classified cases)
+(23 + 70)/105 
+
+# Sensitivity (True Positive Rate, TPR)
+70/74
+
+# Specificity (True Negative Rate, TNR)
+23/31 
+
+# Precision (Positive Predictive Value, PPV)
+70/78
+
+```
+The accuracy percentage is 88.57%.
+The sensitivity rate is 0.9459.
+The specificity rate is 0.7419.
+The precision rate is 0.8974.
+
+#### Plot density of log-odds
+
+```{r plot logit}
+# binary categorical variable is NN_model_type
+
+# Predicted log odds 
+models$logit <- predict(log_model, type = "link") 
+
+# Density plot of log-odds for each outcome
+models %>%
+  ggplot() + 
+  geom_density(aes(logit, color = NN_model_type, fill = NN_model_type), alpha = .4) +
+    geom_rug(aes(logit, color = NN_model_type)) +
+  geom_text(x = -5, y = .07, label = "TN = 23") +
+  geom_text(x = -1.75, y = .008, label = "FN = 4") +
+  geom_text(x = 1, y = .006, label = "FP = 8") +
+  geom_text(x = 5, y = .04, label = "TP = 70") +
+  theme(legend.position = c(.85,.85)) +
+  geom_vline(xintercept = 0) + 
+  xlab("logit (log-odds)") +
+  labs(title = "Plot density between TP.25 and s_RMS")
+```
+
+#### ROC plot and AUC
+
+```{r ROC}
+# Call the library plotROC
+library(plotROC) 
+
+# Plot ROC depending on values of y and its probabilities displaying some cutoff values
+ROCplot1 <- ggplot(models) + 
+  geom_roc(aes(d = y, m = prob), cutoffs.at = list(0.1, 0.5, 0.9)) +
+  labs(title = "ROC plot for logistic regression of TP.25 and s_RMS")
+ROCplot1
+
+# Calculate the area under the curve still using the library plotROC with function calc_auc
+calc_auc(ROCplot1)
+```
+The ROC plot shows a line very close to the top left corner and fr from the diagonal. This suggests that there a a high true positive rate and low false positive rate. These conclusions help determine that the model is good.
+The AUC value is 0.9598. The AUC is the area under the curve and suggests predictive accuracy. This high value means that the model is good.
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

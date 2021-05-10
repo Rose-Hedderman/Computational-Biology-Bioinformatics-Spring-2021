@@ -1,0 +1,293 @@
+---
+title: "Volleyball Scores"
+author: 'Rose Hedderman EID: rrh2298'
+date: "5/10/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+#### This report is an explanatory variable analysis over volleyball statistics for a mens and a womens team. The datasets in this report are called 'mens' and 'womens' and they were found on Kaggle as CSV files. Both datasets have the same variables which include points scored from blocking (Blocks), attacking (Attacks), serving (Serves), and the total points for each player (Total). There are also statistics on the Rank, ShirtNumber, and Team for each player. These datasets were combined and a Gender variable was created to compare. The topic is of interest to me because I have played volleyball for about eight years and was intrigued to compare mens stats against womens. The results of this report determine that there is not a clear cluster that shows gender when scores are analyzed. Implications of this study include that mens play does not differ from womens very much. This could encourage co-ed play from either side: encourage men to play with female friends and women to team up with male friends. There does not appear to be an athletic difference. However, these are statistics from some of the best players.
+
+## Tidy
+
+##### Both datasets, mens and womens, are imported and read in as excel files. They have mostly the same variables, so a new one was added as an identifier between the two before joining in the next step. The datasets were considered tidy because they already contained the required number of categorical and numeric variables. Additionally, the variables within them were clear and needed no manipulation for ease of analysis.
+
+```{r #put a name here}
+library(readxl)
+library(dplyr)
+library(tidyverse)
+library(cluster)
+mens <- read_excel("C:\\Users\\roseh\\OneDrive\\Desktop\\Spring 2021\\SDS 348\\mens.xlsx")
+womens <- read_excel("C:\\Users\\roseh\\OneDrive\\Desktop\\Spring 2021\\SDS 348\\womens.xlsx")
+
+# Make a gender column in each dataset and label it with M or W respectively so merge goes successfully
+mens <- mens %>%
+  mutate(Gender = 'M')
+
+womens <- womens %>%
+  mutate(Gender = 'W')
+mens
+
+```
+
+## Join/Merge
+
+##### The two datasets were merged using a full join. Both data sets have all of the same variable names so each column name had to be specified to make sure the resulting dataset was tidy. No cases were dropped, but there were issues figuring out how to join by multiple columns for that was not shown in class.
+
+```{r}
+# merge the datasets vertically because they have the same variables
+scores <- mens %>%
+  full_join(womens, by = c("Rank","Name", "ShirtNumber", "Team","Attacks", "Blocks", "Serves", "Total", "Gender"))
+scores
+
+```
+
+
+## Summary Statistics
+
+##### Dpylr Functions are used first in exploring and modifying the dataset, then additional summary statistics follow with discussion at the end of the section.
+
+```{r}
+#install.packages("kableExtra")
+#library(kableExtra)
+# Use all 6 dpylr functions while exploring and modifying dataset
+
+# Filter for Team USA because we love our country and count the USA players
+scores %>% 
+  filter(Team == 'USA') %>%
+  summarize(count = n())
+
+# Group by Team to see distribution of international representation and count how many players on each team there are 
+scores %>%
+  group_by(Team) %>%
+  summarize(numPlayers = n()) %>%
+  arrange(numPlayers)
+
+# Use arrange and top_n to find the highest score
+scores %>%
+  select(Total) %>%
+  top_n(1, Total)
+
+# Use arrange to find the lowest rank possible
+scores %>%
+  arrange(desc(Rank))
+
+# Use summarize to find the standard deviation of total scores
+scores %>%
+  summarize(stdDTotal = sd(Total))
+
+# Using mutate, create a new variable that determines if a players score is at, above, or below the mean
+scores <- scores %>%
+  mutate(Avg = case_when(Total < 64.032 ~ 'Below',
+                         Total > 64.032 ~ 'Above',
+                         Total == 64.032 ~ 'Average'))
+
+# Summary Statistics
+
+# Summary stats for Attacks
+scores %>%
+  summarize(meanAttacks = mean(Attacks),
+            medianAttacks = median(Attacks),
+            minAttacks = min(Attacks),
+            maxAttacks = max(Attacks),
+            stdvAttacks = sd(Attacks))
+
+# Summary stats for Blocks
+scores %>%
+  summarize(meanBlocks = mean(Blocks),
+            medianBlocks = median(Blocks),
+            minBlocks = min(Blocks),
+            maxBlocks = max(Blocks),
+            stdvBlocks = sd(Blocks))
+
+
+# Summary stats for Serves
+scores %>%
+  summarize(meanServes = mean(Serves),
+            medianServes = median(Serves),
+            minServes = min(Serves),
+            maxServes = max(Serves),
+            stdvServes = sd(Serves))
+
+# Summary stats for Totals
+scores %>%
+  summarize(meanTotals = mean(Total),
+            medianTotals = median(Total),
+            minTotals = min(Total),
+            maxTotals = max(Total),
+            stdvTotals = sd(Total))
+
+# Summary stats by gender
+scores %>%
+  group_by(Gender) %>%
+  summarize(meanTotals = mean(Total),
+            medianTotals = median(Total),
+            minTotals = min(Total),
+            maxTotals = max(Total),
+            stdvTotals = sd(Total))
+
+# Pretty Table using Kable
+sumTable <- matrix(c(mean(scores$Attacks), median(scores$Attacks),min(scores$Attacks),
+                     max(scores$Attacks),sd(scores$Attacks),mean(scores$Blocks),
+                     median(scores$Blocks),min(scores$Blocks),max(scores$Blocks),
+                     sd(scores$Blocks),mean(scores$Serves),
+                   median(scores$Serves),min(scores$Serves),max(scores$Serves),
+                   sd(scores$Serves),mean(scores$Total),median(scores$Total),
+                   min(scores$Total),max(scores$Total),sd(scores$Total)), ncol = 5, byrow = T)
+
+# Name columns according to summary statistic
+colnames(sumTable) <- c("Mean", "Median", "Min", "Max","StdDev")
+# Name row according to variable name
+rownames(sumTable) <- c("Attacks", "Blocks", "Serves", "Total")
+# amke table using kable package
+sumTable %>%
+  kbl() %>%
+  kable_styling()
+
+```
+
+*First, each of the scoring variables were averaged. The mean number of attacks was 49.91	attacks. The mean number of blocks was 8.826 blocks. The mean number of serves was 5.296 serves. The mean total score was 64.032 points. The USA has 40 players in this dataset. The DOM team had the least number of players with 11 players. The highest score is 421 total points. The lowest rank possible is number 255. The standard deviation of total scores is 59.7952. No player has exactly the mean total points foudn from the last table.*
+
+## Visualizations
+
+#### Visualization 1: Correlation Matrix
+```{r pressure, echo=FALSE}
+scoreNum <- scores %>% 
+  select(-Name, -Team, -Gender, -Avg) %>%
+  scale %>%
+  as.data.frame 
+
+cor(scoreNum, use = "pairwise.complete.obs") %>%
+  # Save as a data frame
+  as.data.frame %>%
+  # Convert row names to an explicit variable
+  rownames_to_column %>%
+  # Pivot so that all correlations appear in the same column
+  pivot_longer(-1, names_to = "other_var", values_to = "correlation") %>%
+  ggplot(aes(rowname, ordered(other_var, levels = rev(sort(unique(other_var)))), fill=correlation)) +
+  # Heatmap with geom_tile
+  geom_tile() +
+  # Change the scale to make the middle appear neutral
+  scale_fill_gradient2(low="yellow",mid="white",high="red") +
+  # Overlay values
+  geom_text(aes(label = round(correlation,2)), color = "black", size = 4) +
+  # Give title and labels
+  labs(title = "Correlation Matrix for the Dataset scores", x = "First Variable", y = "Second Variable")
+```
+
+*There is a clear 1 to 1 correlation between each variable and itself. The Attacks and Total variables are very closely correlated with a value of 0.99. Other honorable mentions include the 0.68 correlation value between Serves and Total points. Shirt Number has next to no correlation with any other numeric value, but this is expected.* 
+
+#### Visualization 2: Bar Plot
+```{r echo=FALSE}
+# histogram of year and receptor type
+# RColorBrewer::display.brewer.all()
+ggplot(scores, aes(x = ShirtNumber, fill=Gender))+
+  geom_bar()+
+  # Give title and labels
+  labs(title = "Bar Graph of Shirt Number by Gender", x = "Shirt Number", y = "Number of Players with that Shirt #") +
+  scale_colour_brewer("Set3")
+```
+
+*This bar graph shows the display of Shirt Number by Gender. This display shows that men and women have a pretty even mix of picking the same shirt numbers. Even number 99 has one girl and one boy.*
+
+#### Visualization 3:  Regression Line
+```{r pressureThree, echo=FALSE}
+# correlation of year and text length
+
+# Fit a linear regression between weight and disc 
+reg1 =  lm(Attacks ~ Total,  data =  scoreNum)
+a1 =  reg1$coefficients[1] # intercept
+b1 =  reg1$coefficients[2] # slope
+
+# The regression line minimizes the vertical distances to observations
+ggplot(scoreNum,  aes(x =  Attacks,  y =  Total)) + 
+  geom_point() +
+  geom_abline(intercept =  a1,  slope =  b1, col =  "blue",  lwd =  1.5) +
+  geom_segment(aes(xend =  Attacks,  yend =  reg1$fitted), lty = 2) + 
+  geom_point(y = reg1$fitted.values, size =  2,  shape =  16, color = "red") + 
+  coord_fixed() +
+  # Give title and labels
+  labs(title = "Regression Plot of Attacks to Total Score", x = "Attacks", y = "Total Score")
+```
+
+*This regression line shows the great correlation between Attacks and Total Score. These two variables were shown to be closely correlated in the correlation matrix and this regression line is an addition display how significant the correlation is.*
+
+### Dimensionality Reduction
+
+##### PCA
+```{r pressureFour, echo=FALSE}
+
+# PCA
+# Prepare data for PCA and run PCA
+pca <- scores %>%
+  # Remove categorical variables
+  select(-Team, -Gender,-Avg,-Name) %>%   
+  # Scale to 0 mean and unit variance (standardize)
+  scale() %>%           
+  prcomp()
+
+# Results from PCA
+names(pca)
+
+# Visualize the results
+pca
+
+# Visualize the rotated data
+head(pca$x)
+
+# Add the information about the different groups back into PCA data
+pca_data <- data.frame(pca$x, Gender = scores$Gender)
+head(pca_data)
+
+# Plot the data according to the new coordinate system: PC1 and PC2
+ggplot(pca_data, aes(x = PC1, y = PC2, color = Gender)) + 
+  geom_point() +
+  scale_color_manual(values = c("M" = "blue", "W" = "pink")) +
+  labs(title = "PC1 and PC2")
+
+pca$rotation
+
+# Save the rotation matrix in a data frame
+rotation_data <- data.frame(
+  pca$rotation, 
+  variable = row.names(pca$rotation))
+
+# Define an arrow style
+arrow_style <- arrow(length = unit(0.05, "inches"), type = "closed")
+
+# Plot the contribution of variables to PCs using geom_segment() for arrows and geom_text() for labels
+ggplot(rotation_data) + 
+  geom_segment(aes(xend = PC1, yend = PC2), x = 0, y = 0, arrow = arrow_style) + 
+  geom_text(aes(x = PC1, y = PC2, label = variable), hjust = 0, size = 3, color = "red")  +
+  xlim(-1., 1.) + 
+  ylim(-1., 1.)+
+  coord_fixed() +
+  # Title the PCA Plot
+  labs(title = "PCA Plot")
+  
+
+# Determine the percentage of variance explained by each component with sdev
+percent <- 100* (pca$sdev^2 / sum(pca$sdev^2))
+percent
+
+# Visualize the percentage of variance explained by each component
+perc_data <- data.frame(percent = percent, PC = 1:length(percent))
+ggplot(perc_data, aes(x = PC, y = percent, fill ="cyl")) + 
+  geom_col() + 
+  geom_text(aes(label = round(percent, 2)), size = 4, vjust = -0.5) + 
+  ylim(0, 75)+
+  labs(title = "Percentage of Variance Explained by Each Component")
+
+```
+
+*The standard deviations on each PC were: 1.967, 1.002, 0.751, 0.673, 0.327, 0.0000 eith respect to PC1, PC2, PC3, PC4, PC5, and PC6. The rotation matrix (orthogonal transformation) was then made to uncorrelate values in an effort to maximize variance. This rotated data was then plotted in the scatterplot above. While the variance was maximized, there was still not a lot of clustering between genders. As shown in the PCA Plot, Blocks, Attacks, and Total contributed greatly to the result while Rank did not as much and ShirtNumber did not really matter. Finally, PCA1 proved to explain the 64.51% of the variance while PC5 and PCA6 did not contribute at all.*
+
+
+
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
