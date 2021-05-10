@@ -80,7 +80,7 @@ cor(nummodels, use = "pairwise.complete.obs") %>%
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 
 ```
-Notable relationships seen in the correlation matrix that will be tested later on include: AUC.1 ~ D.prime and TP.25 ~ s_RMSE. Some numerical variables showed to have very little correlation so they were not included in the MANOVA analysis in an effort to cut down unnecessary number crunching. These variables include depth, input_t, numTrn, uniTrn, and width.
+Notable relationships seen in the correlation matrix that will be tested later on include: AUC.1 ~ D.prime and TP.25 ~ s_RMSE. The darker the color of the box in the correlation martix (whether red or blue), the higher the correlation. Many correlations between variables were incredibly high so I did not use these for my analyssi for I run this risk of encouthering a confounding variable. I chouse still hgihly correlated variables (just slightly less so) to see if I could dig a little deeper for my analysis. Some numerical variables showed to have very little correlation so they were not included in the MANOVA analysis in an effort to cut down unnecessary number crunching. These variables include depth, input_t, numTrn, uniTrn, and width. 
 
 ### MANOVA
 Performed a MANOVA test between 10 numerical variables with the most correlation according to the correlation matrix. 
