@@ -1,0 +1,484 @@
+{
+  "Departments": [
+    {
+      "Business Schools": [
+        {
+          "name": "McCombs School of Business",
+          "university": "University of Texas at Austin",
+          "majors": "Accounting\nCanfield Business Honors Program\nFinance\nInternational Business\nManagement\nManagement Information Systems\nMarketing\nScience and Technology Management\nSupply Chain Management",
+          "minors": "Accounting Minor\nAccounting Minor for Business Economics Option Program\nBusiness Analytics Minor\nBusiness and Public Policy Minor\nBusiness Minor\nEnergy Management Minor\nEntrepreneurship Minor\nFinance Minor\nFinance Minor for Business Economics Option Program\nGlobal Management Minor\nHealthcare Industry Reform and Innovation Minor\nInternational Business Minor\nManagement Minor\nManagement Information Systems Minor\nMarketing Minor\nProfessional Sales and Business Development Minor\nReal Estate Minor\nRisk Management Minor\nSupply Chain Management Minor\nWealth Management Minor\nWealth Management Certificate",
+          "nummajors": 9,
+		  "numminors": 21,		  
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+		  "name": "College of Haas School of Business",
+          "university": "University of California, Berkeley",
+          "majors": "Business Administration",
+          "minors": "",
+		  "nummajors": 1,
+		  "numminors": 0,		  
+		  "acceptance rate": 32,
+          "rank": 8
+		},
+		{
+		  "name": "Price College of Business",
+          "university": "University of Oklahoma",
+          "majors": "Accounting\nEntrepreneurship & Economic Development\nFinance\nManagement and International Business\nManagement Information Systems\nMarketing and Supply Chain",
+		  "minors": "Sports Business for Business Majors\nSports Business for Non-Business Majors\nMIS for Business Majors\nMIS for Non-Business Majors\nManagement\nMarketing\nLeadership for Business Majors\nFinance for Business Majors\nEnterprise Studies\nEntrepreneurship for Business Majors\nEntrepreneurship for Non-Business Majors\nEconomics\nAccounting",
+		  "nummajors": 6,
+		  "numminors": 13,		  
+		  "acceptance rate": 32,
+          "rank": 8
+		}
+      ]
+    },
+    {
+      "Engineering Schools": [
+        {
+          "name": "Cockrell School of Engineering",
+          "university": "University of Texas at Austin",
+          "majors": "Bioengineering\nCivil Engineering\nElectrical Engineering and Computer Science\nEngineering Science Programs (Energy Engineering, Engineering Mathematics and Statistics, Engineering Physics, Environmental Engineering Science)\nIndustrial Engineering and Operations Reasearch\nMaterials Science and Engineering\nMechanical Engineering\nNuclear Engineering\nManagement, Entrepreneurship, and Technology (M.E.T.)\nBioengineering & Business Administration\nCivil Engineering & Business Administration\nElectrical Engineering and Computer Science & Business Administration\nIndustrial Engineering and Operations Research & Business Administration\nMaterials Science and Engineering & Business Administration\nMechanical Engineering & Business Administration\nUndeclared Engineering & Business Administration\nUndeclared Engineering"
+          "minors": "Materials Science and Engineering Minor\nComputational Science and Engineering Certificate\nHumanitarian Engineering Certificate\nNational Academy of Engineering Grand Challenges Scholars Program Certificate",
+          "nummajors": 17,
+		  "numminors": 4,	
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "College of Engineering",
+          "university": "University of California, Berkeley",
+          "majors": "Aerospace Engineering\nArchitectural Engineering\nBiomedical Engineering\nChemical Engineering\nCivil Engineering\nComputational Engineering\nElectrical and Computer Engineering\nEnvironmental Engineering\nGeosystems Engineering and Hydrogeology\nMechanical Engineering\nPetroleum Engineering",
+          "minors": "Bioengineering\nComputer Science\nElectrical Engineering & Computer Sciences (EECS)\nElectronic Intelligent Systems\nEnergy Engineering\nEnvironmental Engineering\nGeosystems\nIndustrial Engineering & Operations Research\nMaterials Science & Engineering\nMechanical Engineering\nNuclear Engineering\nStructural Engineering",
+		  "nummajors": 11,
+		  "numminors": 12,	
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "Gallogly College of Engineering",
+          "university": "University of Oklahoma",
+          "majors": "Aerospace and Mechanical Engineering\nChemical, Biological and Materials Engineering\nCivil Engineering and Environmental Science\nComputer Science\nElectrical and Computer Engineering\nEngineering\nEngineering Physics\nIndustrial and Systems Engineering\nBiomedical Engineering",
+		  "minors": "Electrical and Computer Engineering\nComputational Technology\nComputer Science",
+		  "nummajors": 9,
+		  "numminors": 3,	
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "School of Engineering and Applied Sciences",
+          "university": "Harvard University",
+          "majors": "Applied Mathematics\nBioengineering\nComputer Science\nElectrical Engineering\nEnvironmental Science & Engineering\nMaterials Science & Mechanical Engineering",
+		  "minors": "Applied Mathematics\nComputer Science",
+		  "nummajors": 6,
+		  "numminors": 2,	
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "College of Engineering",
+          "university": "Boston University",
+          "majors": "Aerospace\nBiomedical Engineering\nComputer Engineering\nElectrical Engineering\nEnery Technologies\nEngineering Innovation\nManufacturing Engineering\nMaterials Science & Engineering\nMechanical Engineering\nNanotechnology\nPhotonics\nRobotics & Autonomous Systems\nSystems Engineering\nProduct Design & Manufacture\nTechnology Innovation",
+		  "minors": "Biomedical Engineering\nComputer Engineering\nElectrical Engineering\nEngineering Science Minor\nMaterials Science & Engineering\nMechanical Engineering\nSystems Enigneering",
+		  "nummajors": 15,
+		  "numminors": 7,	
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "Engineering, Aviation, and Technology",
+          "university": "Saint Louis University",
+          "majors": "Aeronautics\nAerospace Engineering\nBiomedical Engineering\nCivil Engineering\nComputer Engineering\nElectrical Engineering\nEngineering Physics\nMechanical Engineering\nPhysics",
+		  "minors": "Aerospace Engineering\nBiomedical Engineering\nFlight Science\nMechanical Engineering\nPhysics",
+		  "nummajors": 9,
+		  "numminors": 5,	
+		  "acceptance rate": 32,
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "Liberal Arts Schools": [
+        {
+          "name": "College of Liberal Arts",
+          "university": "University of Texas at Austin",
+          "majors": "African and African Diaspora Studies\nAmerican Studies\nAnthropology\nAsian Cultures and Languages\n(Apply to Asian Cultures and Languages, then declare a specialization.)\nChinese\nHindi/Urdu\nJapanese\nKorean\nMalayalam\nSanskrit\nTami\nAsian Studies\n(​Apply to Asian Studies, then declare a specialization.)\nEast Asia\nSouth Asia\nTaiwan\nClassical Languages\nClassics\nGreek\nLatin\nClassical Studies\nAncient History\nClassical Archaeology\nEconomics\nEnglish\nEnvironmental Science (Geographical Sciences)\nEthnic Studies\nAsian American\nMexican American\nEuropean Studies\nFrench Studies\nGeography\nGerman\nGovernment\nHealth & Society\nHistory\nHuman Dimensions of Organizations\nHumanities\nInternational Relations and Global Studies\nItalian\nJewish Studies\nLatin American Studies\nLinguistics\nMiddle Eastern Studies\nPhilosophy\nPlan II Honors Program\nPortuguese\nPsychology\nRace, Indigeneity, and Migration\nReligious Studies\nRhetoric and Writing\nRussian, East European and Eurasian Studies\nSociology\nSpanish\nSustainability Studies\nUndeclared (Liberal Arts)\nUrban Studies\nWomen’s and Gender Studies",
+          "minors": "African and African Diaspora Studies Minor\nAmerican Sign Language Studies Minor\nAmerican Studies Minor\nAnthropology Minor\nArabic Minor\nArchaeology Minor\nAsian American Studies Minor\nAsian Religions Minor\nChinese Minor\nClassical Studies Minor\nComparative Literature Minor\nCore Texts and Ideas Minor\nCultural Anthropology Minor\nCultural Expression, Human Experience, and Thought Minor\nEconomics Minor\nEnglish Minor\nEuropean Studies Minor\nEvolutionary and Functional Anatomy Minor\nFrench Studies Minor\nGeography Minor\nGerman, Scandinavian, and Dutch Studies Minor\nGlobal Interreligious Dynamics Minor\nGovernment Minor\nGreek Minor\nHebrew Minor\nHistory Minor\nHolocaust and Genocide Studies Minor\nItalian Studies Minor\nJewish Studies Minor\nKorean Minor\nLanguage, Culture, and Communication Minor\nLatin Minor\nLaw, Justice, and Society Minor\nLesbian, Gay, Bisexual, Transgender, and Queer/Sexualities Studies Minor\nMedieval Studies Minor\nMexican American and Latina/o Studies Minor\nMiddle Eastern Studies Minor\nMilitary Leadership Minor\nPersian Minor\nPhilosophy Minor\nPhilosophy of Law Minor\nPhilosophy of the Mind and Language Minor\nPortuguese Minor\nPrimatology Minor\nReligious Studies Minor\nRhetoric and Writing Minor\nRussian Minor\nRussian, East European, and Eurasian Studies Minor\nSlavic and Eurasian Languages Minor\nSocial and Behavioral Sciences Minor\nSociology Minor\nSpanish Minor\nTurkish Minor\nUTeach-Liberal Arts Minor\nWomen's and Gender Studies Minor\nAfrican Studies Certificate\nBusiness Spanish Certificate\nComputational Science and Engineering Certificate\nCore Texts and Ideas Certificate\nCreative Writing Certificate\nDigital Humanities Certificate\nGerman Certificate\nHistory and Philosophy of Science Certificate\nIbero-American Cultural Diversity Certificate\nIndigenous Studies Certificate\nJapanese Certificate\nLesbian, Gay, Bisexual, Transgender, and Queer/Sexualities Studies Certificate\nSecurity Studies Certificate\nSpanish for Medical Professions Certificate",
+          "nummajors": 59,
+		  "numminors": 69,	
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+        {
+          "name": "Steve Hicks School of Social Work",
+          "university": "University of Texas at Austin",
+          "majors": "Social Work",
+          "minors": "Disability Studies Minor\nSocial Work Minor\nPublic Safety Certificate",
+          "nummajors": 1,
+		  "numminors": 3,	
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+        {
+          "name": "School of Undergraduate Studies",
+          "university": "University of Texas at Austin",
+          "majors": "Undeclared",
+          "minors": "Children and Society Certificate\nConflict Resolution and Peace Studies Certificate\nDesign Strategies Certificate\nDigital Arts and Media Certificate\nEnvironment and Sustainability Certificate\nEthics and Leadership in Business Certificate\nEthics and Leadership in Health Care Certificate\nEthics and Leadership in Law, Politics, and Government Certificate\nEthics and Leadership in the Technology and the Media Certificate\nHuman Rights and Social Justice Certificate\nInnovation, Creativity, and Entrepreneurship Certificate\nMedia, Culture, and Identities Certificate\nMuseum Studies Certificate\nPatients, Practitioners, and Cultures of Care Certificate\nPublic Policy Certificate\nSmart Cities Certificate\nSocial Entrepreneurship and Nonprofits Certificate\nSocial Inequality, Health, and Policy Certificate",
+          "nummajors": 1,
+		  "numminors": 18,	
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "College of Letters and Science",
+          "university": "University of California, Berkeley",
+          "majors": "Arts and Humanities\nArt, History of\nArt, Practice of\nCeltic Studies\nClassics\nClassical Civilization\nClassical Languages\nGreek\nLatin\nComparative Literature\nDutch Studies\nEast Asian Languages and Cultures\nChinese\nJapanese\nEast Asian Religion, Thought, and Culture\nEnglish\nFilm French\nGerman\nItalian Studies\nMusic\nNear Eastern Civilizations\nNear Eastern Languages and Literature\nArabic\nEgyptology\nHebrew\nPersian\nPhilosophy\nRhetoric\nScandinavian\nDanish\nFinnish\nNowegian\nOld Norse\nSwedish\nSlavic\nArmenian\nBosnian/Croatian/Serbian\nCzech\nHungarian\nPolish\nRussian\nSouth and Southeast Asian Studies\nSpanish and Portuguese\nLanguages, Literature, and Cultures in the Spanish-Speaking World\nLanguages, Literature, and Cultures in the Portuguese-Speaking World\nLatin American Languages, Literature, and Cultures\nHispanic, Languages, Literature, and Bilingualism\nTheater, Dance, and Performance Studies\nDance and Performance Studies\nTheater and Performance Studies\nUndeclared - Arts and Humanities\nBiology + Business Program\nIntegrative Biology\nMolecular and Cell Biology\nBiochemistry and Molecular Biology\nCell and Developmental\nBiology\nGenetics, Genomics, and Development\nImmunology and Pathogenesis\nNeurobiology\nPublic Health\nUndeclared - Biological Sciences\nAmerican Studies\nInterdisciplinary Studies\nLegal Studies\nMedia Studies\nUndeclared - Interdisciplinary Studies\nAstrophysics (including Astronomy)\nChemistry also offered in the College of Chemistry\nComputer Science\nData Science\nEarth and Planetary Science\nAtmospheric Science\nEnvironmental Earth Science\nGeology\nGeophysics\nMarine Science\nPlanetary Science\nMathematics\nMathematics, Applied\nOperations Research and Management Sciences\nPhysics\nStatistics\nUndeclared - Mathematical and Physical Sciences\nAfrican American Studies\nAnthropology\nAsian American and Asian Diaspora Studies\nChicano/Latino Studies\nCognitive Science\nEconomics\nEnvironmental Economics and Policy also offered in the Rausser College of Natural Resources\nEthnic Studies\nGender and Women's Studies\nGeography\nGlobal Management Program: intensive global business immersion\nGlobal Studies\nAsian Area Studies I - China\nAsian Area Studies II - Japan\nDevelopmental Studies\nLatin American Studies\nMiddle Eastern Studies\nPeace and Conflict Studies\nHistory\nLinguistics\nNative American Studies\nPolitical Economy\nPolitical Science\nPsychology\nSocial Welfare\nSociology\nUndeclared - Social Sciences",
+		  "minors": "African American Studies\nAmerican Studies\nAncient Egyptian and Near Eastern Art and Archaeology\nAncient Egyptian and Near Eastern Civilizations\nAnthropology\nApplied Language Studies\nApplied Mathematics\nArabic\nArchitecture\nArmenian Studies\nArt History\nArt Practice\nAsian American and Asian Diaspora Studies\nAstrophysics\nAtmospheric Science\nBioengineering\nBioengineering and Business Administration\nBioengineering/Materials Science and Engineering Joint Major\nBiology + Business\nBuddhist Studies\nBusiness Administration\nCeltic Studies\nChemical Biology\nChemical Engineering\nChemical Engineering / Materials Science & Engineering Joint Major\nChemical Engineering / Nuclear Engineering Joint Major\nChemistry\nChicana/o and Latina/o Studies\nChinese Language\nCity Planning\nCivil Engineering\nCivil Engineering and Business Administration\nClassical Civilizations\nClassical Languages\nClimate Science\nCognitive Science\nComparative Literature\nComputer Science\nConservation and Resource Studies\nCourse Threads\nCreative Writing\nDance and Performance Studies\nData Science\nDemography\nDigital Humanities\nDisability Studies\nDutch Studies\nEECS & Business Administration\nEECS / Materials Science & Engineering Joint Major\nEECS / Nuclear Engineering Joint Major\nEarth and Planetary Science\nEast Asian Religion, Thought and Culture\nEast European/Eurasian Languages and/or Cultures\nEconomics\nEcosystem Management and Forestry\nEducation\nElectrical Engineering & Computer Sciences (EECS)\nElectronic Intelligent Systems\nEnergy Engineering\nEnergy and Resources\nEngineering Mathematics and Statistics\nEngineering Physics\nEnglish\nEnvironmental Design & Urbanism in Developing Countries\nEnvironmental Earth Science\nEnvironmental Economics and Policy\nEnvironmental Engineering\nEnvironmental Engineering Science\nEnvironmental Sciences\nEthnic Studies\nFilm\nFood Systems\nFrench\nGender and Women's Studies\nGenetics and Plant Biology\nGeography\nGeology\nGeophysics\nGeospatial Information Science and Technology\nGeosystems\nGerman\nGlobal Poverty and Practice\nGlobal Studies\nGreek\nHebrew\nHispanic Languages, Linguistics, and Bilingualism\nHistory\nHistory of the Built Environment\nHuman Rights Interdisciplinary\nIndustrial Engineering & Operations Research\nIndustrial Engineering & Operations Research & Business Administration\nIntegrative Biology\nInterdisciplinary Studies\nItalian Studies\nJapanese Language\nJewish Studies\nJournalism\nKorean Language\nLandscape Architecture\nLatin\nLegal Studies\nLesbian, Gay, Bisexual, & Transgender Studies\nLinguistics\nLogic\nMarine Science\nMaterials Science & Engineering\nMaterials Science & Engineering / Mechanical Engineering Joint Major\nMaterials Science & Engineering / Nuclear Engineering Joint Major\nMaterials Science & Engineering and Business Administration\nMathematics\nMechanical Engineering\nMechanical Engineering & Business Administration\nMechanical Engineering / Nuclear Engineering\nMedia Studies\nMedieval Studies\nMicrobial Biology\nMolecular Environmental Biology\nMolecular and Cell Biology\nMusic\nNative American Studies\nNear Eastern Civilizations\nNear Eastern Languages & Literatures\nNew Media\nNuclear Engineering\nNutritional Sciences: Dietetics\nNutritional Sciences: Physiology & Metabolism\nNutritional Sciences: Toxicology\nOperations Research & Management Science\nPersian\nPhilosophy\nPhysics\nPlanetary Science\nPolitical Economy\nPolitical Science\nPortuguese Language, Literatures, & Cultures\nPre-Med / Pre-Health\nPrelaw Information\nProfessional Accountancy\nPsychology\nPublic Health\nPublic Policy\nRace and the Law\nRhetoric\nRussian Culture\nRussian Language\nRussian Literature\nScandinavian\nScience and Math Education\nSlavic Languages and Literatures\nSocial & Cultural Factors in Environmental Design\nSocial Welfare\nSociety and Environment\nSociology\nSouth and Southeast Asian Studies\nSpanish Languages, Literatures, & Cultures\nSpanish and Portuguese\nStatistics\nStructural Engineering\nSustainable Design\nSustainable Environmental Design\nTheater and Performance Studies\nTibetan\nTurkish\nUrban Studies",
+		  "nummajors": 111,
+		  "numminors": 164,	
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "College of Arts and Science",
+          "university": "University of Oklahoma",
+          "majors": "Advanced Center for Genome Technology\nAfrican and African-American Studies Program\nAnthropology\nApplied Research for Non-Profit Organizations\nBiology\nChemistry and Biochemistry\nClassics & Letters\nCommunication\nConfucius Institute\nEconomics\nEnglish\nFilm and Media Studies Program\nHealth and Exercise Science\nHistory\nHistory of Science\nHuman Relations\nEnvironmental Studies\nInterdisciplinary International Relations Program\nThe Schusterman Center for Judaic & Israel Studies\nSchool of Library and Information Studies\nMathematics\nMedieval and Renaissance Studies\nMicrobiology and Plant Biology\nModern Languages, Literatures, and Linguistics\nNative American Studies Program\nOklahoma Archeological Survey\nOklahoma Biological Survey\nPhilosophy\nPhysics\nAstronomy\nPolitical Communication Center\nPolitical Science\nPsychology\nReligious Studies Program\nSocial Work\nSociology\nStudies in Democracy and Culture\nWomen’s and Gender Studies Program",
+		  "minors": "Broadcast Meteorology\nChemistry\nChinese\nClassical Culture\nClassical Greek\nClimate Adaptation\nConstitutional Studies\nConstruction Science\nCriminal Investigation and Intelligence Analysis\nCriminal Justice\nDiversity Studies\nEnglish: Literary & Cultural Studies\nEnglish: Writing\nEnvironmental Science\nEnvironmental Studies\nEnvironmental Sustainability\nEuropean Studies\nFranchising\nFrench\nGeneral Business for Non-Business Majors\nGerman\nHealth & Exercise Science\nHealthcare\nHebrew\nHistory of Medicine\nHistory of Science\nHistory\nHydrologic Science\nInformation Studies\nIntelligence & National Security\nInternational Development\nInternational Enterprise Studies\nInternational Security Studies\nInternational Studies\nIranian Studies\nIrish Studies\nItalian\nJapanese\nJudaic & Israel Studies\nLatin American Studies\nLatin\nLatinx Studies\nLGBTQ Studies\nLinguistics\nMathematics\nMedical Humanities\nMedieval & Renaissance Studies\nMeteorology\nMicrobiology\nMiddle Eastern Studies\nMilitary Science\nNative American Studies\nNaval Science\nNon-Governmental Organizations\nNonprofit Organizational Studies\nOrganizational Leadership\nPhilosophy\nPhysical Geography\nPhysics\nPlant Biology\nPolitical Science\nPortuguese\nPre-Health Social Sciences\nProfessional Writing\nPsychology\nPublic Affairs & Administration\nPublic and Community Health\nReligious Studies\nRestorative Justice\nRussian\nSocial Justice\nSociology - Criminology\nSociology - General\nSpanish\nWater and Sanitation for Health and Sustainable Development\nWater Sciences\nWeather and Climate\nWomen’s and Gender Studies\nAerospace Studies\nAfrican and African-American Studies\nAfrican Studies\nAir Traffic Control\nAnthropology\nArabic\nAsian Studies\nAstronomy\nAviation: Aviation Management\nAviation: Multi-Engine Commercial Pilot\nAviation: Single-Engine Commercial Pilot\nBiological Conservation\nBiology",
+		  "nummajors": 38,
+		  "numminors": 91,	
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "College of Arts & Sciences",
+          "university": "Harvard University",
+          "majors": "African and African American Studies\nHistory and Science\nAnthropology\nHistory of Art and Architecture\nApplied Mathematics\nHuman Developmental and Regenerative Biology\nArt, Film, and Visual Studies\nHuman Evolutionary Biology\nAstrophysics\nIntegrative Biology\nBiomedical Engineering\nLinguistics\nChemical and Physical Biology\nMathematics\nChemistry\nMechanical Engineering\nChemistry and Physics\nMolecular and Cellular Biology\nClassics\nMusic\nComparative Literature\nNear Eastern Languages and Civilizations\nComputer Science\nNeuroscience\nEarth and Planetary Sciences\nPhilosophy\nEast Asian Studies\nPhysics\nEconomics\nPsychology\nElectrical Engineering\nReligion, Comparative Study of\nEngineering Sciences\nRomance Languages and Literatures\nEnglish\nSlavic Languages and Literatures\nEnvironmental Science and Engineering\nSocial Studies\nEnvironmental Science and Public Policy\nSociology\nFolklore and Mythology\nSouth Asian Studies\nGermanic Languages and Literatures\nSpecial Concentrations\nGovernment\nStatistics\nHistory\nTheater, Dance, & Media\nHistory and Literature	Women, Gender, and Sexuality, Study of",
+		  "minors": "African and African American Studies\nMolecular and Cellular Biology\nAfrican Studies\nMusic\nAfrican American Studies\nNear Eastern Languages and Civilizations\nAnthropology\nThe Middle East in Antiquity\nArchaeology\nHistories and Cultures of Muslim Societies (Islamic Studies)\nAstrophysics\nJewish Studies\nCeltic Languages and Literatures\nModern Middle Eastern Studies\nChemistry\nComparative Near Eastern Studies\nClassics\nNeuroscience\nComparative Literature\nPhilosophy\nComputer Science\nGeneral Philosophy\nEarth and Planetary Sciences\nValue Theory\nEast Asian Studies\nContemporary Metaphysics and Epistemology\nEconomics\nHistory of Philosophy\nEducational Studies\nPhysics\nEnergy and Environment\nPsychology\nEnglish\nReligion, Comparative Study of\nEnvironmental Science and Public Policy\nRomance Languages and Literatures\nEthnicity, Migration, Rights\nFrench\nEthnicity, Migration, Rights\nItalian\nLatino Studies\nPortuguese\nEuropean History, Politics, and Societies\nSpanish\nFolklore and Mythology\nRussia, Eastern Europe, and Central Asia\nGermanic and Scandinavian Studies\nSlavic Languages and Literatures\nGlobal Health and Health Policy\nCentral European Studies\nGovernment\nRussian Studies\nHistory\nSociology\nHistory of Art and Architecture\nSouth Asian Studies\nHistory of Science\nStatistics\nHuman Evolutionary Biology\nTheater, Dance, and Media\nIntegrative Biology\nTranslation Studies\nLinguistics\nArt, Film, and Visual Studies\nLanguage History & Language Structure\nFilm/Video\nLanguage & Linguistic Theory\nFilm and Visual Studies\nLanguage, Mind & Brain\nStudio\nMathematical Sciences\nWomen, Gender, and Sexuality, Studies of\nMedieval Studies\nMicrobial Sciences\nMind Brain Behavior",
+		  "nummajors": 49,
+		  "numminors": 75,	
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "College of Arts and Sciences",
+          "university": "New York University",
+          "majors": "Africana Studies\nAmerican Studies\nAnthropology\nAnthropology and Classical Civilization\nAnthropology and Linguistics\nArt History\nArt History and Classics\nAsian/Pacific/American Studies\nBiochemistry\nBiology\nChemistry\nCinema Studies\nClassical Civilization\nClassical Civilization and Hellenic Studies\nClassics\nComparative Literature\nComputer Science\nComputer and Data Science\nComputer Science and Mathematics\nData Science\nDramatic Literature\nEast Asian Studies\nEconomics\nEconomics and Computer Science\nEconomics and Mathematics\nEngineering\nEnglish\nEnvironmental Studies\nEuropean and Mediterranean Studies\nFrench\nFrench and Linguistics\nGender and Sexuality Studies\nGerman Literature and Culture\nGerman and Linguistics\nGlobal Public Health\nHebrew and Judaic Studies\nHellenic Studies\nHistory\nIberian Studies\nInternational Relations\nItalian Studies\nItalian and Linguistics\nJournalism\nLanguage and Mind\nLatin American and Caribbean Studies\nLatino Studies\nLinguistics\nLuso-Brazilian Language and Literature\nMathematics\nMedieval and Renaissance Studies\nMetropolitan Studies\nMiddle Eastern and Islamic Studies\nMusic\nNeural Science\nPhilosophy\nPhysics\nPolitics\nPsychology\nPublic Policy\nReligious Studies\nRomance Languages\nRussian and Slavic Studies\nSocial and Cultural Analysis\nSociology\nSpanish and Linguistics\nSpanish and Portuguese\nUrban Design and Architecture Studies",
+		  "minors": "Africana Studies\nAmerican Studies\nAncient Studies\nAnimal Studies\nAnthropology\nArt History\nAsian/Pacific/American Studies\nAstronomy\nBusiness Studies\nBroadcast and Multimedia Journalism\nChemistry\nChild and Adolescent Mental Health Studies\nChinese\nCinema Studies\nClassical Civilization\nComparative Literature\nComputer Science\nComputer Science and Mathematics\nCreative Writing\nCreative Writing in Spanish\nData Science\nDramatic Literature\nEast Asian Civilization\nEconomics\nEnglish and American Literature\nEnvironmental Biology\nEnvironmental Studies\nEuropean and Mediterranean Studies\nFrancophone Studies\nFrench Studies\nFrench Studies in English Translation\nGender and Sexuality Studies\nGenetics\nGenomics and Bioinformatics\nGerman\nHebrew and Judaic Studies\nHellenic Studies\nHistory\nIberian Studies\nIrish Studies\nItalian Studies\nJapanese\nKorean\nLatin and Greek\nLatin American and Caribbean Studies\nLatino Studies\nLaw and Society\nLinguistics\nLiterature in Translation\nLuso-Brazilian Language and Literature\nMathematics\nMedieval and Renaissance Studies\nMetropolitan Studies\nMiddle Eastern and Islamic Studies\nMolecular and Cell Biology\nMusic\nNative American and Indigenous Studies\nPhilosophy\nPhysics\nPolitics\nPrint and Online Journalism\nPsychology\nReligious Studies\nRussian and Slavic Studies\nScience and Society\nSocial and Cultural Analysis\nSociology\nSouth Asian Studies\nSpanish\nUrban Design and Architecture\nWeb Programming and Applications",
+		  "nummajors": 67,
+		  "numminors": 71,	
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "College of Letters and Sciences",
+          "university": "University of California, Los Angeles",
+          "majors": "African American Studies\nAfrican and Middle Eastern Studies\nAmerican Indian Studies\nAmerican Literature and Culture\nAncient Near East and Egyptology\nAnthropology\nAnthropology\nArabic\nArt History\nArt History\nAsian Humanities\nAsian Languages and Linguistics\nAsian Religions\nAsian Studies\nAstrophysics\nAtmospheric and Oceanic Sciences\nAtmospheric and Oceanic Sciences/Mathematics\nBiochemistry\nBiology\nBiophysics\nBiology\nBiophysics\nBusiness Economic\nCentral and East European Languages and Cultures\nChemistry\nChemistry/Materials Science\nChicana and Chicano Studies\nChinese\nClassical Civilization\nClimate Science\nCognitive Science\nCommunication \nComparative Literature\nComputational and Systems Biology\nEarth and Environmental Science\nEcology, Behavior, and Evolution\nEconomics\nEnglish\nEnvironmental Science\nEuropean Studies\nFrench\nFrench and Linguistics\nGender Studies\nGeography\nGeography/Environmental Studies\nGeology\nGeology/Engineering Geology\nGeophysics\nGerman\nGlobal Studies\nGreek\nGreek and Latin\nHistory\nHuman Biology and Society\nHuman Biology and Society\nInternational Development Studies\nIranian Studies\nItalian\nItalian and Special Field\nJapanese Jewish Studies\nKorean\nLabor Studies\nLatin\nLatin American Studies\nLinguistics\nLinguistics and Anthropology\nLinguistics and Asian Languages and Cultures\nLinguistics and Computer Science\nLinguistics and English\nLinguistics and French\nLinguistics and Italian\nLinguistics and Philosophy\nLinguistics and Psychology\nLinguistics and Scandinavian Languages\nLinguistics and Spanish\nLinguistics, Applied\nMarine Biology\nMathematics\nMathematics, Applied\nMathematics/Applied Science\nMathematics, Data Theory\nMathematics/Economics\nMathematics, Financial Actuarial\nMathematics for Teaching\nMathematics of Computation\nMicrobiology, Immunology, and Molecular Genetics\nMiddle Eastern Studies\nMolecular, Cell, and Developmental Biology\nNeuroscience\nNordic Studies\nPhilosophy\nPhysics\nPhysics\nPhysiological Science\nPolitical Science\nPortuguese and Brazilian Studies\nPsychobiology\nPsychology\nReligion, Study of\nRussian Language and Literature\nRussian Studies\nScandinavian Languages and Cultures\nSociology\nSpanish\nSpanish and Community and Culture\nSpanish and Linguistics\nSpanish and Portuguese\nStatistics\nIndividual Field of Concentration \nUndeclared",
+          "minors": "Accounting\nAfrican American Studies\nAfrican and Middle Eastern Studies\nAfrican Studies\nAmerican Indian Studies\nAncient Near East and Egyptology\nAnthropology\nApplied Developmental Psychology\nArabic and Islamic Studies\nArmenian Studies\nArt History\nAsian American Studies\nAsian Humanities\nAsian Languages\nAtmospheric and Oceanic Sciences\n Bioinformatics\nBiomedical Research\nBrain and Behavioral Health\nCentral and East European Studies\nChicana and Chicano Studies\nClassical Civilization\nCognitive Science\nCommunity Engagement and Social Change\nComparative Literature\nConservation Biology\nDigital Humanities\nDisability Studies\nEarth and Environmental Science\nEast Asian Studies\nEducation Studies\nEnglish\nEntrepreneurship\nEnvironmental Engineering\nEnvironmental Systems and Society\nEthnomusicology\nEuropean Studies\nEvolutionary Medicine\nFilm, Television and Digital Media\nFood Studies\nFrench\nGender Studies\nGeochemistry\nGeography\nGeography/Environmental Studies\nGeology\nGeophysics and Planetary Physics\n Geospatial Information Systems and Technologies\nGerman\nGerontology\nGlobal Health\nGlobal Studies\nGreek\nHebrew and Jewish Studies\nHistory\nHistory of Science, Technology and Medicine\nInternational Migration Studies\nIranian Studies\nIsrael Studies\nItalian\nLabor Studies\nLatin\nLatin American Studies\nLesbian, Gay, Bisexual, Transgender, and Queer Studies\nLinguistics\nLiterature and the Environment\nMathematical Biology\nMathematics\nMathematics for Teaching\nMexican Studies\nMiddle Eastern Studies\nMusicology\nMusic Industry\nNeuroscience\nPhilosophy\nPilipino Studies\nPortuguese and Brazilian Studies\nProfessional Writing\nPublic Affairs\nPublic Health\nReligion, Study of\nRussian Language\nRussian Literature\nRussian Studies\nScandinavian\nScience Education\nSocial Thought\nSociety and Genetics\nSouth Asian Studies\nSoutheast Asian Studies\nSpanish\nSpanish Linguistics\nStatistics\nStructural Biology\nSystems Biology\nTheater\nUrban and Regional Studies\nVisual and Performing Arts Education",
+		  "nummajors": 110,
+		  "numminors": 97,	
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "General Colleges",
+          "university": "University of the Potomac-Washington DC Campus",
+          "majors": "Business Administration & Management\nCriminal Justice & Corections\nInformation Technology\nAccounting\nInternational Business\nManagement Information Systems\nHospitality Management\nHealth & Medical Administrative Services",
+          "minors": "",
+		  "nummajors": 8,
+		  "numminors": 0,	
+		  "acceptance rate": 32,
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "Fine Arts Schools": [
+        {
+          "name": "College of Fine Arts",
+          "university": "University of Texas at Austin",
+          "majors": "Acting\nArt History\nArts and Entertainment Technologies\nDance\nDance Studies\nDesign\nJazz\nMusic (B.A.)\nMusic Composition (B.A. or B.M.)\nMusic Performance\nMusic Studies\nChoral Music Emphasis\nInstrumental Emphasis\nStudio Art\nTheatre and Dance\nTheatre Studies\nVisual Art Studies",
+          "minors": "Art History Minor\nArts Management and Administration Minor\nMinor in Studio Art",
+          "nummajors": 17,
+		  "numminors": 3,	
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "Weitzenhoffer Family College of Fine Arts",
+          "university": "University of Oklahoma",
+          "majors": "Art\nArt, Technology and Culture\nStudio Art\nVisual Communication\nArt History\nBallet Pedagogy\nBallet Performance\nModern Performance\nActing\nCostume Technology\nDesign\nDramaturgy\nScene Technology\nStage Management\nMusic\nMusical Arts\nMusic Education: Vocal\nMusic Education: Instrumental\nBrass & Percussion\nComposition\nHarp\nOrgan\nPiano\nPiano Pedagogy\nStrings & Guitar\nVoice\nWoodwinds\nMusical Theatre",
+		  "minors": "Dance History\nArt History\nArt\nArts Management and Entrepreneurship for Fine Arts Majors\nArts Management and Entrepreneurship for Non-Fine Arts Majors\nTheatre\nMusic\nFilm & Media Studies",
+		  "nummajors": 28,
+		  "numminors": 8,	
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "Vandercook College of Music",
+          "university": "Vandercook College of Music",
+          "majors": "Music Education\nMusic: Performance\nMusic: Pedagogy\nMusic: Pre=Cert",
+		  "minors": "Performers Certificate",
+		  "nummajors": 4,
+		  "numminors": 1,	
+		  "acceptance rate": 32,
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "Sciences Schools": [
+        {
+          "name": "Jackson School of Geosciences",
+          "university": "University of Texas at Austin",
+          "majors": "Environmental Science (Geological Sciences)\nGeological Sciences\nGeosystems Engineering and Hydrogeology**",
+          "minors": "Computational Geosciences Minor\nGeosciences Minor\nHydrology Minor\nSedimentology and Earth Surface Processes Minor\nComputational Science and Engineering Certificate",
+          "nummajors": 3,
+		  "numminors": 5,
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+        {
+          "name": "College of Pharmacy",
+          "university": "University of Texas at Austin",
+          "majors": "Pharmacy\n(Apply to Pre-Pharmacy in the College of Natural Sciences; see Special Programs for more information.)",
+          "minors": "",
+          "nummajors": 1,
+		  "numminors": 0,
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+        {
+          "name": "College of Natural Sciences",
+          "university": "University of Texas at Austin",
+          "majors": "Astronomy\nBiochemistry\nBiology\nCell and Molecular Biology\nComputational Biology\nEcology, Evolution and Behavior\nHuman Biology\nMarine and Freshwater Science\nMicrobiology and Infectious Diseases\nPlant Biology\nTeaching\nChemistry\nComputation\nTeaching\nComputer Science\nEnvironmental Science (Biological Sciences)\nHuman Development and Family Sciences\nEarly Childhood\nFamilies and Personal Relationships\nFamilies and Society\nHuman Development\nHuman Ecology\nMathematics\nActuarial Science\nApplied Mathematics\nMathematical Sciences\nPure Mathematics\nTeaching\nMedical Laboratory Science\nNeuroscience\nNutrition\nDietetics\nInternational Nutrition\nNutritional Sciences\nNutrition and Public Health\nPhysics\nBiophysics\nComputation\nRadiation Physics\nSpace Sciences\nTeaching\nPre-Pharmacy\nPublic Health\nTextiles and Apparel\nMerchandising and Consumer Sciences\nApparel, Functional and Technical Design\nUndeclared",
+          "minors": "Applied Statistical Modeling Certificate\nComputational Science and Engineering Certificate\nElements of Computing Certificate\nEvidence and Inquiry Certificate\nFood and Society Certificate\nForensic Science Certificate\nMarine Science Certificate\nPre-Health Professions Certificate\nQuantum Information Science Certificate\nScientific Computation and Data Sciences Certificate\nTextile Conservation and Museum Studies Certificate\nUTeach-Natural Sciences Secondary Teaching Option Certificate\nUTeach-Natural Sciences Secondary Teaching Option Accelerated Track Certificate\nUTeach Teacher Certification",
+          "nummajors": 47,
+		  "numminors": 14,
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "College of Chemistry",
+          "university": "University of California, Berkeley",
+          "majors": "Chemical Biology\nChemical Engineering\nChemistry",
+		  "minors": "Chemical Engineering\nChemistry",
+		  "nummajors": 3,
+		  "numminors": 2,
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "Rauser College of Natural Resources",
+          "university": "University of California, Berkeley",
+          "majors": "Conservation and Resource Studies\nEcosystem Management and Forestry\nForestry\nNatural Resource Management\nEnvironmental Economics and Policy also offered in the College of Letters and Science\nEnvironmental Sciences (biological, physical, social)\nGenetics and Plant Biology\nMicrobial Biology\nMolecular Environmental Biology\nNutritional Sciences\nDietetics\nMolecular Toxicology\nPhysiology and Metabolism\nSociety and Environment\nUndeclared",
+		  "minors": "Conservation and Resource Studies\nEcosystem Management and Forestry\nEnergy and Resources\nEnvironmental Economics and Policy\nFood Systems\nGeospatial Information Science and Technology\nNutritional Sciences: Physiology & Metabolism\nNutritional Sciences: Toxicology",
+		  "nummajors": 15,
+		  "numminors": 8,
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "College of Atmospheric & Geographic Sciences",
+          "university": "University of Oklahoma",
+          "majors": "Geography\nMeteorology",
+		  "minors": "Geographic Information Systems\nGeography\nGeology",
+		  "nummajors": 2,
+		  "numminors": 3,
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "Mewbourne College of Earth and Energy",
+          "university": "University of Oklahoma",
+          "majors": "Petroleum & Geological Engineering\nEnvironmental Geology\nGeneral Geology\nPetroleum Geology\nPaleontology\nGeneral Geophysics",
+		  "minors": "",
+		  "nummajors": 6,
+		  "numminors": 0,
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "College of Allied Health",
+          "university": "University of Oklahoma",
+          "majors": "Allied Health Sciences\nCommunication Sciences and Disorders\nMedical Imaging and Radiation Sciences\nNutritional Sciences\nRehabilitation Sciences",
+		  "minors": "",
+		  "nummajors": 5,
+		  "numminors": 0,
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "College of Pharmacy",
+          "university": "University of Oklahoma",
+          "majors": "Pharmacy",
+		  "minors": "",
+		  "nummajors": 1,
+		  "numminors": 0,
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "College of Dentistry",
+          "university": "University of Oklahoma",
+          "majors": "Dental Hygiene",
+		  "minors": "",
+		  "nummajors": 1,
+		  "numminors": 0,
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "College of Public Health",
+          "university": "University of Oklahoma",
+          "majors": "Biostatistics and Epidemiology\nHealth Administration and Policy\nHealth Promotion Sciences\nOccupational and Environmental Health",
+		  "minors": "",
+		  "nummajors": 4,
+		  "numminors": 0,
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "Biological Sciences",
+          "university": "Ohio University - Lancaster Campus",
+          "majors": "Biological Sciences\nCellular and Molecular Biology\nEnvironmental Biology\nHuman Biology\nMarine, Freshwater and Environmental Biology\nMicrobiology\nPre-Physical Therapy\nPre-Professional Program\nWildlife and Conservation Biology",
+		  "minors": "Biological Sciences",
+		  "nummajors": 9,
+		  "numminors": 1,
+		  "acceptance rate": 32,
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "Communication Schools": [
+        {
+          "name": "Moody College of Communication",
+          "university": "University of Texas at Austin",
+          "majors": "Advertising\nCommunication and Leadership\nSpeech, Language, and Hearing Sciences\nAudiology\nDeaf Education/Deaf Studies\nSpeech/Language Pathology\nCommunication Studies\nCorporate Communication\nInterpersonal Communcation\nPolitical Communication\nJournalism\nPublic Relations\nRadio-Television-Film\nUndeclared (Communication)",
+          "minors": "Communicating for Development and Philanthropy Minor\nCommunication and Social Change Minor\nCommunication Studies Minor\nGlobal Communication Minor\nHealth Communication Minor\nJournalism and Media Minor\nLatino Media Arts and Studies Minor\nMedia and Entertainment Industries Minor\nMedia Studies Minor\nProfessional Sales and Business Development Minor\nScience Communication Minor\nSports Media Minor",
+          "nummajors": 14,
+		  "numminors": 12,
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "Gaylord College of Journalism and Mass Communication",
+          "university": "University of Oklahoma",
+          "majors": "Advertising\nCreative Media Production\nJournalism\nProfessional Writing\nPublic Relations",
+		  "minors": "Creative Media Production\nHuman Relations\nEditing and Publishing\nElections & Campaign Management\nCommunication\nInterior Design for Non-Architecture/Visual Communication Majors\nInterior Design for Visual Communication Majors",
+		  "nummajors": 5,
+		  "numminors": 7,
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "School of Communicationa and Mass Media",
+          "university": "Northwest Missouri State University",
+          "majors": "Interpersonal Communication\nOrganizational Communication\nPublic Relations\nRhetoric\nDigital Media: Content Strategy\nApplied Advertising\nBroadcast and Production\nMultimedia Journalism\nSport Media\nMedia Studies\nOnline Communications: Public Relations\nSpeech and Theatre Education\nStrategic Advising",
+		  "minors": "Agricultural Communications\nBroadcasting\nInterpersonal Communication\nOrganizational Communication\nPublic Relations\nRhetoric\nDigital Media: Content Strategy\nJournalism\nSpeech and Theatre Education\nStrategic Advising",
+		  "nummajors": 13,
+		  "numminors": 10,
+		  "acceptance rate": 32,
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "Education Schools": [
+        {
+          "name": "College of Education",
+          "university": "University of Texas at Austin",
+          "majors": "Applied Learning and Development\nAll-Level Generic Special Education\nEarly Childhood to Grade 6 Generalist\nEarly Childhood to Grade 6 Bilingual Generalist Certification\nEarly Childhood to Grade 6 English as a Second Language\nYouth and Community Studies\nAthletic Training\nKinesiology and Health Education\nApplied Movement Science\nExercise Science\nHealth Promotion and Behavioral Science\nPhysical Culture and Sports\nSport Management\n​(Apply to Physical Culture and Sports; see Special Programs for more information.)",
+          "minors": "Educational Psychology Minor\nKinesiology and Health Education Minor\nUrban Teachers Minor",
+          "nummajors": 14,
+		  "numminors": 3,
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "Jeannine Rainbolt Colelge of Education",
+          "university": "University of Oklahoma",
+          "majors": "Early Childhood Education\nTulsa Campus: Bachelor's Completion Program in Early Childhood Education\nElementary Education\nLanguage Arts (English) Education\nMathematics Education\nScience Education\nBiological Sciences\nChemistry\nEarth Science\nPhysical Sciences\nPhysics\nSocial Studies Education\nSpecial Education\nWorld Language Education\nFrench\nGerman\nLatin\nSpanish",
+		  "minors": "",
+          "nummajors": 18,
+		  "numminors": 0,
+		  "acceptance rate": 32,
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "Architecture Schools": [
+        {
+          "name": "School of Architecture",
+          "university": "University of Texas at Austin",
+          "majors": "Architectural Studies\nArchitectural History\nArchitecture\nArchitecture/Architectural Engineering\nInterior Design",
+          "minors": "Architectural History Minor\nArchitectural Studies Minor\nInterior Design Minor\nLandscape Studies Minor",
+          "nummajors": 6,
+		  "numminors": 4,
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "College of Environmental Design",
+          "university": "University of California, Berkeley",
+          "majors": "Architecture\nLandscape Architecture\nSustainable Environmental Design\nUrban Studies",
+		  "minors": "Architecture\nCity Planning\nEnvironmental Design & Urbanism in Developing Countries\nHistory of the Built Environment\nLandscape Architecture\nSocial & Cultural Factors in Environmental Design\nSustainable Design",
+		  "nummajors": 4,
+		  "numminors": 7,
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "Christopher C. Gibbs College of Architecture",
+          "university": "University of Oklahoma",
+          "majors": "Architecture\nConstruction Science\nEnvironmental Design\nInterior Design\nLandscape Architecture\nRegional and City Planning\nUrban Design",
+		  "minors": "Architectural Studies\nInterior Design for Architecture Majors",
+		  "nummajors": 7,
+		  "numminors": 2,
+		  "acceptance rate": 32,
+          "rank": 8
+        },
+		{
+          "name": "School of Architecture",
+          "university": "Rice University",
+          "majors": "Architecture\nArchitectural Studies",
+		  "minors": "",
+		  "nummajors": 2,
+		  "numminors": 0,
+		  "acceptance rate": 32,
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "Information Schools": [
+        {
+          "name": "School of Information",
+          "university": "University of Texas at Austin",
+          "majors": "Informatics (B.A. or B.S.I.)",
+          "minors": "Informatics Minor\nDigital Humanities Certificate",
+          "nummajors": 1,
+		  "numminors": 1,
+		  "acceptance rate": 32,
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "Nursing Schools": [
+        {
+          "name": "School of Nursing",
+          "university": "University of Texas at Austin",
+          "majors": "Nursing",
+          "minors": "",
+		  "nummajors": 1,
+		  "numminors": 0,
+          "acceptance rate": 32,
+          "rank": 8
+        }
+      ]
+    }
+  ]
+}
