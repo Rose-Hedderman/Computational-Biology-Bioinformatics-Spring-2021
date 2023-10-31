@@ -1,4 +1,4 @@
-# Work from Computational Biology & Bioinformatics course Spring 2021
+# Work from Computational Biology & Bioinformatics course
 
 Repository originally created in Spring 2021, updated Fall 2023.
 
